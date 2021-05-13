@@ -11,7 +11,7 @@ import android.view.View;
 class RotationView extends View {
     private final static String TAG = RotationView.class.getSimpleName();
 
-    private double direction = 0;
+    private double direction = -Math.PI / 2;
 
     private final Paint paint = new Paint();
 
@@ -52,7 +52,7 @@ class RotationView extends View {
     }
 
     void setDirection(double th) {
-        direction = th - Math.PI / 2;
+        direction += th/180;
         this.getRotation();
         invalidate();
     }
